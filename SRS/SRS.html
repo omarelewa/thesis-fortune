@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SRS - Fortune</title>
+    <link rel="stylesheet"
+      href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet"
+      href="assets/fonts/font-awesome.min.css">
+    <style>
+      h1, 
+      a {
+        font-family:'Courier New';
+      }
+      ol {
+        counter-reset: item;
+        font-family:'Courier New';
+      }
+      li {
+        display: block
+      }
+      ol li:before {
+        content: counters(item, ".") " ";
+        counter-increment: item;
+        font-family:'Courier New';
+      }
+      dl, 
+      p {
+        font-size: smaller;
+        font-weight: 350;
+        margin-left: 10%;
+        font-family:'Courier New';
+      }
+
+      ol.p{
+        counter-reset: i;
+      }
+
+      li.c{
+        counter-increment: i;
+      }
+      li.c:before {
+        content: counters(i, ".") " ";
+        counter-increment: i;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav" style="background-color: #000; color: #fff; position:sticky;" >
+      <div class="container">
+        <a class="navbar-brand" href="SRS.html" style="background-color: black; color: #fff;">
+          Fortune
+        </a>
+        <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="border-color: #fff; color: #fff;">
+          <i class="fa fa-bars">
+          </i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="SRS.html" style="background-color: black; color: #fff;">
+                SRS
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="masthead" style="background-image:url('assets/img/post-bg.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto position-relative">
+          </div>
+        </div>
+      </div>
+    </header>
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto">
+            <h1 class="page-heading">
+              Software Requirements Specification
+            </h1>
+            <br><br>
+            <h2>
+              <ol>
+                <li>
+                  Introduction
+                  <br><br>
+                  <h4>
+                    <dd></dd>
+                    <ol>
+                      <li>
+                        Purpose
+                        <dl>
+                          <dd></dd>
+                          <dd>
+                            The purpose of <strong>Fortune</strong> is to provide venture capitals (VCs) with the required data to determine whether a startup will succeed or not, while utilizing machine learning techniques. The objective of this project is to decrease the time taken for VCs to reach a final decision on whether to invest in a startup or not. By using existing machine learning algorithms, our main aim is to provide an application that can be used to accelerate the decision making process of VCs. 
+                          </dd>
+                        </dl>
+                      </li>
+                      <li>
+                        Document Conventions
+                        <dd></dd>
+                        <dl>
+                          This document may use a scale to measure some requirements. For any requirement, a scale from 1 to 10 will be used to assess the importance of a feature such that 1 is the lowest level and 10 is the highest. Every requirement is dealt with as a separate unit that has its own evaluation criteria and priority.
+                        </dl>
+                      </li>
+                      <li>
+                        Intended Audience and Reading Suggestions
+                        <dd></dd>
+                        <dl>
+                          The targeted audience to read this document are the stakeholders of the project which includes the project manager, ML experts, UI/UX designers, web/app developers, database administrators, back-end and front-end developers, marketing team, finance team, Research and Development team, and the end-users, VCs. In order to grasp the full scope of all requirements, read this document from top to bottom. Please note that some sections can be more important to some stakeholders while other sections are not.
+                        </dl>
+                      </li>
+                      <li>
+                        Product Scope
+                        <dd></dd>
+                        <dl>
+                          The purpose of <strong>Fortune</strong> is to accelerate the funding process between VCs and startups. The vision of this project is to maximize the benefits from startups data and utilize it in an effective machine learning model. Our mission is to create a platform that aids VCs by applying data analytics on startups’ data and providing the possibility of their success. The corporate goal behind this project is to help VCs make better investment decisions and aid startups by getting them the resources they need. This platform will be implemented as a web application that is user friendly and reliable for VCs to use.
+                        </dl>
+                      </li>
+                      <li>
+                        References
+                      </li>
+                    </ol>
+                  </h4>
+                </li>
+                <hr>
+                <br>
+                <li>
+                  Overall Description
+                  <br><br>
+                  <h4>
+                    <dd></dd>
+                    <ol>
+                      <li>
+                        Product Perspective
+                        <dl>
+                          <dd></dd>
+                          <dd>
+                            This product is a new self-contained product. It is not a part of a bigger system nor a replacement of an existing product. Our service is going to have a reliable network and database that will be efficient enough to cover all users.
+                          </dd>
+                        </dl>
+                      </li>
+                      <li>
+                        Product Functions
+                        <dl>
+                          <dd></dd>
+                          <dd>
+                            User Registration/Sign Up
+                          </dd>
+                          <dd>
+                            Sign In/Log In
+                          </dd>
+                          <dd>
+                            Selection between Entrepreneur and Investor Modes
+                          </dd>
+                          <dd>
+                            Creating New Startup Record
+                          </dd>
+                          <dd>
+                            Evaluating Startup through the ML Model
+                          </dd>
+                          <dd>
+                            Explore new investment opportunities
+                          </dd>
+                          <dd>
+                            Create/Modify a Watchlist of Interesting Startups
+                          </dd>
+                          <dd>
+                            Costumer Service
+                          </dd>
+                        </dl>
+                      </li>
+                      <li>
+                        User Classes and Characteristics
+                        <dd></dd>
+                        <ol>
+                          <li>
+                            Administrators
+                            <dl>
+                              <dd></dd>
+                              <dd>
+                                All available permissions and privileges are granted.
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>
+                            Developers
+                            <dl>
+                              <dd></dd>
+                              <dd>
+                                Full access to the application source code.
+                              </dd>
+                              <dd>
+                                Commit changes to oneself's branch.
+                              </dd>
+                              <dd>
+                                CRUD operations on thd database.
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>
+                            Investors
+                            <dl>
+                              <dd></dd>
+                              <dd>
+                                Ability to browse available startups.
+                              </dd>
+                              <dd>
+                                Ability to contact startup accounts to reveal their predicted <strong>SCORES???!!!</strong> that are evaluated through the ML model running in the backend.
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>
+                            Entrepreneurs
+                            <dl>
+                              <dd></dd>
+                              <dd>
+                                Will be provided with the ability to run the ML model on their startup's accounts.
+                              </dd>
+                              <dd>
+                                Browse through other available startup accounts.
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>
+                            General Users
+                            <dl>
+                              <dd></dd>
+                              <dd>
+                                Browse through available startup accounts.
+                              </dd>
+                            </dl>
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        Operating Environment
+                        <dl>
+                          <dd></dd>
+                          <dd>
+                            <strong>Fortune</strong> will be working on any devices that can access the internet. As it’s a web app, The website will be working on the common web browsers (chrome for windows and safari for mac users). Some features may not be supported by depreciated browsers like internet explorer.
+                          </dd>
+                          <dd>
+                            The software does not have any hardware requirements. All the needed processing power will be accessed remotely by the web application.
+                          </dd>
+                        </dl>
+                      </li>
+                      <li>
+                        Design and Implementation Constraints
+                        <dl>
+                          <dd></dd>
+                          <dd>
+                            <strong>Fortune</strong> will not be able to verify the accuracy and authenticity of the data entered by the entrepreneur user class. However, a reporting functionality will be available for possible deletion of the users' data of any class, and that will be done by the administrators accounts.
+                          </dd>
+                          <dd>
+
+                          </dd>
+                        </dl>
+                      </li>
+                      <li>
+                        User Documentation
+                        <dl>
+                          <dd>
+                            The absolute first time a client joins the framework, there can be help prompts in application or in the program to assist them with exploring the interface and the various capacities. They can quit the instructional exercise whenever by clicking “&times;”.
+                          </dd>
+                          <dd>
+                            There will be a “Help” button for the user to read the user manual.
+                          </dd>
+                          <dd>
+                            Terms and conditions will appear for the user while signing up for him/her to read it and agree on it to be able to use the application.
+                          </dd>
+                        </dl>
+                      </li>
+                      <li>
+                        Assumptions and Dependencies
+                      </li>
+                    </ol>
+                  </h4>
+                </li>
+                <hr>
+                <br>
+                <li>
+                  External Interface Requirements
+                  <ol>
+                    <li>
+                      User Interfaces
+                      <ol>
+                        <li>
+                          Welcome Page
+                        </li>
+                        <li>
+                          Sign Up Page
+                        </li>
+                        <li>
+                          Sing In Page
+                        </li>
+                        <li>
+                          Get Started Page
+                        </li>
+                        <li>
+                          Home Page/News Feed Page
+                        </li>
+                        <li>
+                          Edit User Accounts Page
+                        </li>
+                        <li>
+                          Requests Page
+                        </li>
+                        <li>
+                          Help and Support Page
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      Hardware Interfaces
+                    </li>
+                    <li>
+                      Software Interfaces
+                    </li>
+                    <li>
+                      Communication Interfaces
+                    </li>
+                  </ol>
+                </li>
+                <hr>
+                <br>
+                <li>
+                  System Features
+                  <ol>
+                    <li>
+                      
+                    </li>
+                  </ol>
+                </li>
+                <hr>
+                <br>
+                <li>
+                  Other Non-functional Requirements
+                  <ol>
+                    <li>
+                      Performance Requirements
+                    </li>
+                    <li>
+                      Safety Requirements
+                    </li>
+                    <li>
+                      Security Requirements
+                    </li>
+                    <li>
+                      Software Quality Attributes
+                    </li>
+                    <li>
+                      Business Rules
+                    </li>
+                  </ol>
+                </li>
+                <hr>
+                <br>
+                <li>
+                  Other Requirements
+                  <ol>
+                    <li>
+                      Appendix A: Glossary
+                    </li>
+                    <li>
+                      Appendix B: Solutions and Concerns
+                    </li>
+                    <li>
+                      Appendix C: Use Case Diagram
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </article>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/clean-blog.js"></script>
+  </body>
+
+</html>
